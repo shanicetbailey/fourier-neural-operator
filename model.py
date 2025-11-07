@@ -3,6 +3,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
+"""
+Adopted from https://github.com/TACS-UCSC/GenDA-Lagrangian/tree/main (https://arxiv.org/abs/2507.06479)
+"""
+
 
 class SpectralConv2d(nn.Module):
     def __init__(self, in_channels, out_channels, modes1, modes2):
