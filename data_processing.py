@@ -13,16 +13,11 @@ import os
 import xarray as xr
 import json
 
-def load_ctd_data(data_dir, start_year, end_year, source = 'CTD'):
+def load_ctd_data(data_dir, start_year, end_year):
     """
     Load and process CTD csv files for a given year range.
     Returns an xarray.Dataset with dimensions (depth, station, time)).
     """
-    if source.lower() == 'ctd':
-        data_dir = f"{data_dir}/lineP_ctds/lineP_CTD_training.csv"
-    elif source.lower() == 'bottle':
-        raise NotImplementedError('Will be included later!')
-        # data_dir = f"{data_dir}/lineP_bottle/lineP_CTD_training.csv"
     
     df_all = pd.read_csv(data_dir, comment="#")
 
