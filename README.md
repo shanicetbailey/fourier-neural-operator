@@ -15,7 +15,7 @@ You can select a subset of the stations for testing.
 ## Data processing
 In main.py the "prepare_data" function
 
-Loads the target observations (Line P ctd observations, files LineP_ctds_YYYY_binned_1m.csv, function load_ctd_data).
+Loads the target observations (Line P ctd observations, function load_ctd_data, in the proto type only 4 depth points are loaded).
 Loads the model data predictors (For now synthetic lineP data is generated in place of real model data).
 Splits the the data into training, validation and testings sets.
 Normalizes all sets of data with scaling parameters computed from only the training set (scale_params.json files are saved with the scaling parameters to denormalize later).
@@ -33,7 +33,7 @@ You should choose model hyperparameters for:
 
 
 ## Architecture details: 
-The FNO2d used Fourier Neural Operator blocks (Li et al, 2020: https://arxiv.org/abs/2010.08895). Each block transforms the input to the spectral domain using FFT, truncates at some spectral frequency, performs channel-wise transformation, inverses FFT the ourput, sums to the a linear transformation of the input, and passes the final tensor to an activation function. This architecture effectively learns dependence across spatial scales uisng an operator which is in-sensitive to sampling resolution.
+The FNO2d used Fourier Neural Operator blocks (Li et al, 2020: https://arxiv.org/abs/2010.08895). Each block transforms the input to the spectral domain using FFT, truncates at some spectral frequency, performs channel-wise transformation, inverses FFT the ourput, sums to the a linear transformation of the input, and passes the final tensor to an activation function. This architecture effectively learns dependence across spatial scales uisng an operator which is in-sensitive to sampling resolution. 
 
 ## Training
 

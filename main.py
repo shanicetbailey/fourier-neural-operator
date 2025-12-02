@@ -27,8 +27,13 @@ from datetime import datetime
 
 
 # === Prepare Data ===
-main_dir = "/fs/site5/eccc/crd/ccrn/users/rpg002/stat_downscaling-workshop/FNO"
-data_dir = "/fs/site5/eccc/crd/ccrn/users/rpg002/stat_downscaling-workshop/data"  ##Changed
+# main_dir = "/fs/site5/eccc/crd/ccrn/users/rpg002/stat_downscaling-workshop/FNO"
+# data_dir = "/fs/site5/eccc/crd/ccrn/users/rpg002/stat_downscaling-workshop/data" 
+
+main_dir = "/path/to/my/projects/line_p/"
+data_dir = "/path/to/my/projects/line_p/data/observation"
+
+data_dir = Path(data_dir)
 
 
 now = datetime.now() ##Changed
