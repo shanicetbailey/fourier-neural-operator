@@ -1,5 +1,5 @@
 # FNO
-This repository contains the code related to an FNO approach to filling in Line-P data.
+This repository contains the code related to an FNO approach to filling in Line-P data..
 
 
 
