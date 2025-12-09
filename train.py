@@ -92,7 +92,7 @@ def train_snapshot_model(model, train_loader, val_loader=None, lr=1e-3, wd=1e-5,
             optimizer.step()
             total_loss += loss.item()
         # validation
-        train_losses.append(total_loss)
+        train_losses.append(total_loss/ len(train_loader))
         if val_loader is not None:
             val_mse = evaluate_snapshot(model, val_loader, MSE_loss)  ##Changed
             val_losses.append(val_mse)
